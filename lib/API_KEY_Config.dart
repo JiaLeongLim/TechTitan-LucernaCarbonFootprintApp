@@ -1,4 +1,4 @@
 // lib/config.dart
 class ApiKeyConfig {
-  static const String geminiApiKey = 'AIzaSyCsGyMheKKKWZMybvcIqx2jLPH3Q5iXjXE';
+  static const String geminiApiKey = 'YOUR API KEY';
 }
