@@ -5,7 +5,12 @@ import 'package:Lucerna/dashboard.dart';
 import 'package:Lucerna/main.dart';
 
 import 'dart:async';
-import 'dart:math'; // Import to generate random values
+import 'dart:convert';
+import 'dart:math'; // As of now, there is only 1 ecolight hardware, and flask is not connected, so we import to generate random values
+import 'package:http/http.dart' as http;
+
+//server's IP address
+const String apiUrl = "http://192.168.153.187:5001/getData";
 
 class ecolight_stat extends StatefulWidget {
   const ecolight_stat({super.key});
@@ -26,10 +31,13 @@ class _ecolight_statState extends State<ecolight_stat> {
   @override
   void initState() {
     super.initState();
-    // Fetch data initially
+    // Fetch data initially, if there is the hardware.
     generateRandomData();
+    // fetchData();
+
     // Set up a timer to generate data every few seconds
     Timer.periodic(Duration(seconds: 5), (Timer t) => generateRandomData());
+    // Timer.periodic(Duration(seconds: 5), (Timer t) => fetchData());
   }
 
   // Function to generate random data within specified ranges
@@ -44,6 +52,36 @@ class _ecolight_statState extends State<ecolight_stat> {
         'algaeBiomass': random.nextBool().toString() // Random true/false
       };
     });
+  }
+
+  // Function to fetch data from the Rapsberry Pi Flask
+  Future<void> fetchData() async {
+    try {
+      // Make the GET request
+      final response = await http.get(Uri.parse(apiUrl));
+
+      // Check if the response status is successful
+      if (response.statusCode == 200) {
+        // Decode the JSON data from the response
+        var data = json.decode(response.body);
+
+        // Update the state with the new data
+        setState(() {
+          latestData = {
+            'light': data['light'].toString(),
+            'temperature': data['temperature'].toString(),
+            'carbon': data['carbon'].toString(),
+            'algaeBiomass': data['algaeBiomass'].toString(),
+          };
+        });
+      } else {
+        // Handle any error codes
+        print("Failed to load data: ${response.statusCode}");
+      }
+    } catch (e) {
+      // Catch any exceptions and print an error message
+      print('Error: $e');
+    }
   }
 
   @override
