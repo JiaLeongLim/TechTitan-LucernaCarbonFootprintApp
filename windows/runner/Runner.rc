@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "testfirebase" "\0"
+            VALUE "FileDescription", "Lucerna" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "testfirebase" "\0"
+            VALUE "InternalName", "Lucerna" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "testfirebase.exe" "\0"
-            VALUE "ProductName", "testfirebase" "\0"
+            VALUE "OriginalFilename", "Lucerna.exe" "\0"
+            VALUE "ProductName", "Lucerna" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

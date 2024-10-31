@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:testfirebase/cf_summary.dart';
-import 'package:testfirebase/chat.dart';
-import 'package:testfirebase/dashboard.dart';
-import 'package:testfirebase/lamp_stat.dart';
-import 'package:testfirebase/main.dart';
-import 'package:testfirebase/carbon_footprint.dart';
+import 'package:Lucerna/cf_summary.dart';
+import 'package:Lucerna/chat.dart';
+import 'package:Lucerna/dashboard.dart';
+import 'package:Lucerna/lamp_stat.dart';
+import 'package:Lucerna/main.dart';
+import 'package:Lucerna/carbon_footprint.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'API_KEY_Config.dart';
 
@@ -225,7 +225,7 @@ class _EnergyRecordState extends State<energyRecord> {
                         builder: (context) => CarbonFootprintTracker()));
               }),
           IconButton(
-              icon: Image.asset('chat-w.png'),
+              icon: Image.asset('assets/chat-w.png'),
               onPressed: () {
                 Navigator.push(
                   context,

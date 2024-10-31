@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:testfirebase/dashboard.dart';
-import 'dart:ui_web' as ui;
-import 'dart:html';
-import 'package:testfirebase/main.dart';
+import 'package:Lucerna/dashboard.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+// import 'package:pure_dart_ui/pure_dart_ui.dart' as ui;
+// import 'dart:html';
+import 'package:Lucerna/main.dart';
 import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -19,6 +20,7 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  late  WebViewController controller;
   String? _errorMessage; // Variable to store error message
 
   Future<void> _login() async {
@@ -52,6 +54,25 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..setNavigationDelegate(
+        NavigationDelegate(
+          onPageFinished: (String url) async {
+            // Inject JavaScript to scroll to center
+            await controller.runJavaScript('''
+              document.body.style.overflow = 'hidden';
+              window.scrollTo(window.innerWidth / 2, window.innerHeight / 2);
+            ''');
+          },
+        ),
+      )
+      ..loadRequest(Uri.parse('https://my.spline.design/cabinwoodscopy-b6bf6e8498ac797fa2b801392b03c330/'));
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: appTheme,
@@ -71,7 +92,11 @@ class _LoginPageState extends State<LoginPage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            _3d_model(),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width,
+                              height: MediaQuery.of(context).size.height * 0.3,
+                              child: WebViewWidget(controller: controller),
+                            ),
                             SizedBox(height: 30),
                             Text(
                               'Lucerna',
@@ -132,27 +157,6 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
-  }
-
-  Widget _3d_model() {
-    // ignore: undefined_prefixed_name
-    ui.platformViewRegistry.registerViewFactory(
-        'hello-world-html',
-        (int viewId) => IFrameElement()
-          ..width = '100%'
-          ..height = '100%'
-          ..src =
-              'https://my.spline.design/cabinwoodscopy-b6bf6e8498ac797fa2b801392b03c330/'
-          ..style.border = 'none');
-
-    return (Directionality(
-      textDirection: TextDirection.ltr,
-      child: SizedBox(
-        width: MediaQuery.sizeOf(context).width,
-        height: MediaQuery.sizeOf(context).width * 0.3,
-        child: HtmlElementView(viewType: 'hello-world-html'),
-      ),
-    ));
   }
 
   Widget _buildTextField(TextEditingController controller, String label,

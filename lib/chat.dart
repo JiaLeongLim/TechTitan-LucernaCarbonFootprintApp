@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import 'package:provider/provider.dart';
-import 'package:testfirebase/carbon_footprint.dart';
-import 'package:testfirebase/dashboard.dart';
-import 'package:testfirebase/history_provider.dart';
-import 'package:testfirebase/lamp_stat.dart';
-import 'package:testfirebase/main.dart';
+import 'package:Lucerna/carbon_footprint.dart';
+import 'package:Lucerna/dashboard.dart';
+import 'package:Lucerna/history_provider.dart';
+import 'package:Lucerna/lamp_stat.dart';
+import 'package:Lucerna/main.dart';
 import 'API_KEY_Config.dart';
 
 class chat extends StatefulWidget {
@@ -377,7 +377,7 @@ class _ChatState extends State<chat> {
                         builder: (context) => CarbonFootprintTracker()));
               }),
           IconButton(
-              icon: Image.asset('chat-b.png'), onPressed: () {}),
+              icon: Image.asset('assets/chat-b.png'), onPressed: () {}),
         ],
       ),
     );

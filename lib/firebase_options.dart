@@ -64,7 +64,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '19239814105',
     projectId: 'test-d994f',
     storageBucket: 'test-d994f.appspot.com',
-    iosBundleId: 'com.example.testfirebase',
+    iosBundleId: 'com.example.Lucerna',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -73,7 +73,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '19239814105',
     projectId: 'test-d994f',
     storageBucket: 'test-d994f.appspot.com',
-    iosBundleId: 'com.example.testfirebase',
+    iosBundleId: 'com.example.Lucerna',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(

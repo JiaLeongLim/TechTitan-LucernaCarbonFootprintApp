@@ -1,13 +1,13 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:testfirebase/chat.dart';
-import 'package:testfirebase/dashboard.dart';
-import 'package:testfirebase/energy_record.dart';
-import 'package:testfirebase/food_record.dart';
-import 'package:testfirebase/journey_record.dart';
-import 'package:testfirebase/lamp_stat.dart';
-import 'package:testfirebase/main.dart';
+import 'package:Lucerna/chat.dart';
+import 'package:Lucerna/dashboard.dart';
+import 'package:Lucerna/energy_record.dart';
+import 'package:Lucerna/food_record.dart';
+import 'package:Lucerna/journey_record.dart';
+import 'package:Lucerna/lamp_stat.dart';
+import 'package:Lucerna/main.dart';
 import 'package:provider/provider.dart';
 import 'history_provider.dart'; // Import the provider
 
@@ -66,13 +66,13 @@ class _CarbonFootprintTrackerState extends State<CarbonFootprintTracker> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     _buildCategoryButton('Food',
-                        Theme.of(context).colorScheme.tertiary, 'food.png'),
+                        Theme.of(context).colorScheme.tertiary, 'assets/food.png'),
                     _buildCategoryButton('Journey',
-                        Theme.of(context).colorScheme.surface, 'journey.png'),
+                        Theme.of(context).colorScheme.surface, 'assets/journey.png'),
                     _buildCategoryButton(
                         'Energy',
                         Theme.of(context).colorScheme.surfaceBright,
-                        'energy.png'),
+                        'assets/energy.png'),
                   ],
                 ),
                 const SizedBox(height: 50),
@@ -201,25 +201,25 @@ class _CarbonFootprintTrackerState extends State<CarbonFootprintTracker> {
     switch (category) {
       case 'Food':
         return Image.asset(
-          'food.png',
+          'assets/food.png',
           height: 45,
           width: 45,
         );
       case 'Journey':
         return Image.asset(
-          'journey.png',
+          'assets/journey.png',
           height: 45,
           width: 45,
         );
       case 'Energy':
         return Image.asset(
-          'energy.png',
+          'assets/energy.png',
           height: 45,
           width: 45,
         );
       default:
         return Image.asset(
-          'temparature.png',
+          'assets/temparature.png',
           height: 45,
           width: 45,
         );
@@ -335,7 +335,7 @@ Widget _buildBottomNavigationBar(BuildContext context) {
             ),
             onPressed: () {}),
         IconButton(
-            icon: Image.asset('chat-w.png'),
+            icon: Image.asset('assets/chat-w.png'),
             onPressed: () {
               Navigator.push(
                 context,

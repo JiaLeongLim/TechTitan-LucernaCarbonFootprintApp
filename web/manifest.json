@@ -1,6 +1,6 @@
 {
-    "name": "testfirebase",
-    "short_name": "testfirebase",
+    "name": "Lucerna",
+    "short_name": "Lucerna",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

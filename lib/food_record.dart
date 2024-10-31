@@ -311,7 +311,7 @@ Widget _buildBottomNavigationBar(BuildContext context) {
                       builder: (context) => CarbonFootprintTracker()));
             }),
           IconButton(
-              icon: Image.asset('chat-w.png'),
+              icon: Image.asset('assets/chat-w.png'),
               onPressed: () {
                 Navigator.push(
                   context,

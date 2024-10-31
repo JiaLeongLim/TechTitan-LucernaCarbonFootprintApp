@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:testfirebase/carbon_footprint.dart';
-import 'package:testfirebase/chat.dart';
-import 'package:testfirebase/dashboard.dart';
-import 'package:testfirebase/main.dart';
+import 'package:Lucerna/carbon_footprint.dart';
+import 'package:Lucerna/chat.dart';
+import 'package:Lucerna/dashboard.dart';
+import 'package:Lucerna/main.dart';
 
 import 'dart:async';
 import 'dart:math'; // Import to generate random values
@@ -94,7 +94,7 @@ class _ecolight_statState extends State<ecolight_stat> {
                 );
               }),
           IconButton(
-              icon: Image.asset('chat-w.png'),
+              icon: Image.asset('assets/chat-w.png'),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -133,7 +133,7 @@ class EcolightMeasuresScreen extends StatelessWidget {
                 Flexible(
                   child: Column(children: [
                     StatCard(
-                      img: 'light.png',
+                      img: 'assets/light.png',
                       title: 'Light Intensity',
                       value: data['light'],
                       color: Theme.of(context).colorScheme.secondary,
@@ -141,7 +141,7 @@ class EcolightMeasuresScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 30),
                     StatCard(
-                      img: 'co2.png',
+                      img: 'assets/co2.png',
                       title: 'Carbon Dioxide Level',
                       value: data['carbon'],
                       color: Theme.of(context).colorScheme.tertiary,
@@ -149,7 +149,7 @@ class EcolightMeasuresScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 30),
                     StatCard(
-                      img: 'temparature.png',
+                      img: 'assets/temparature.png',
                       title: 'Temperature',
                       value: data['temperature'],
                       color: Theme.of(context).colorScheme.surface,
@@ -157,7 +157,7 @@ class EcolightMeasuresScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 30),
                     StatCard(
-                      img: 'algaeBiomass.png',
+                      img: 'assets/algaeBiomass.png',
                       title: 'Algae Bloom Status',
                       value: '50',
                       color: Theme.of(context).colorScheme.primary,
@@ -165,7 +165,7 @@ class EcolightMeasuresScreen extends StatelessWidget {
                     ),
                   ]),
                 ),
-                Image.asset('lamp.png', height: 535),
+                Image.asset('assets/lamp.png', height: 535),
               ],
             )
           ],

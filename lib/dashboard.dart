@@ -2,10 +2,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:testfirebase/carbon_footprint.dart';
-import 'package:testfirebase/chat.dart';
-import 'package:testfirebase/lamp_stat.dart';
-import 'package:testfirebase/main.dart';
+import 'package:Lucerna/carbon_footprint.dart';
+import 'package:Lucerna/chat.dart';
+import 'package:Lucerna/lamp_stat.dart';
+import 'package:Lucerna/main.dart';
 import 'history_provider.dart';
 
 class dashboard extends StatefulWidget {
@@ -24,15 +24,15 @@ class _dashboardState extends State<dashboard> {
 
   // Image paths or widgets for each timeframe
   final Map<String, String> _footprint_Images = {
-    'Daily': 'daily_footprint.png', // Replace with actual asset path
-    'Weekly': 'weekly_footprint.png', // Replace with actual asset path
-    'Monthly': 'monthly_footprint.png', // Replace with actual asset path
+    'Daily': 'assets/daily_footprint.png', // Replace with actual asset path
+    'Weekly': 'assets/weekly_footprint.png', // Replace with actual asset path
+    'Monthly': 'assets/monthly_footprint.png', // Replace with actual asset path
   };
 
   final Map<String, String> _offset_Images = {
-    'Daily': 'daily_offset.png', // Replace with actual asset path
-    'Weekly': 'weekly_offset.png', // Replace with actual asset path
-    'Monthly': 'monthly_offset.png', // Replace with actual asset path
+    'Daily': 'assets/daily_offset.png', // Replace with actual asset path
+    'Weekly': 'assets/weekly_offset.png', // Replace with actual asset path
+    'Monthly': 'assets/monthly_offset.png', // Replace with actual asset path
   };
 
   @override
@@ -476,7 +476,7 @@ class _dashboardState extends State<dashboard> {
                         builder: (context) => CarbonFootprintTracker()));
               }),
           IconButton(
-              icon: Image.asset('chat-w.png'),
+              icon: Image.asset('assets/chat-w.png'),
               onPressed: () {
                 Navigator.push(
                   context,

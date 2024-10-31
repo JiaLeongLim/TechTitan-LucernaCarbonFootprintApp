@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:testfirebase/carbon_footprint.dart';
-import 'package:testfirebase/chat.dart';
-import 'package:testfirebase/dashboard.dart';
-import 'package:testfirebase/history_provider.dart';
-import 'package:testfirebase/lamp_stat.dart';
-import 'package:testfirebase/main.dart';
+import 'package:Lucerna/carbon_footprint.dart';
+import 'package:Lucerna/chat.dart';
+import 'package:Lucerna/dashboard.dart';
+import 'package:Lucerna/history_provider.dart';
+import 'package:Lucerna/lamp_stat.dart';
+import 'package:Lucerna/main.dart';
 
 class CFSummaryPage extends StatelessWidget {
   final String title;
@@ -312,7 +312,7 @@ class CFSummaryPage extends StatelessWidget {
                         builder: (context) => CarbonFootprintTracker()));
               }),
           IconButton(
-              icon: Image.asset('chat-w.png'),
+              icon: Image.asset('assets/chat-w.png'),
               onPressed: () {
                 // Pass carbon_footprint to chat
                 Navigator.push(
