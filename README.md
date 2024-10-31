@@ -54,6 +54,13 @@ AI-Powered Conversations: Engage with an AI assistant to learn more about enviro
 
 
 
+## Development Environment Setup   
+
+1. Java version: JDK 17   
+2. Gradle version: 8.10.2
+
+
+
 ## Features under Development
 Due to the time contraint, these features are still under development, and the codes provided are actually the non-functional prototypes (dummy codes):
 
